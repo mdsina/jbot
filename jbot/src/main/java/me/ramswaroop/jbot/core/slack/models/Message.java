@@ -37,6 +37,10 @@ public class Message {
     private String lastRead;
     @JsonProperty("unread_count")
     private int unreadCount;
+    @JsonProperty("replace_original")
+    private boolean replaceOriginal;
+    @JsonProperty("delete_original")
+    private boolean deleteOriginal;
 
     public Message() {
     }
@@ -179,6 +183,22 @@ public class Message {
 
     public void setUnreadCount(int unreadCount) {
         this.unreadCount = unreadCount;
+    }
+
+    public boolean isReplaceOriginal() {
+        return replaceOriginal;
+    }
+
+    public void setReplaceOriginal(boolean replaceOriginal) {
+        this.replaceOriginal = replaceOriginal;
+    }
+
+    public boolean isDeleteOriginal() {
+        return deleteOriginal;
+    }
+
+    public void setDeleteOriginal(boolean deleteOriginal) {
+        this.deleteOriginal = deleteOriginal;
     }
 
     public String toJSONString() throws JsonProcessingException {
